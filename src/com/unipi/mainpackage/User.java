@@ -1,4 +1,4 @@
 package com.unipi.mainpackage;
 
-public class User {
+public abstract class User {
 }
