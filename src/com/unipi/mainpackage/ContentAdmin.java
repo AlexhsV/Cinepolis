@@ -3,7 +3,7 @@ package com.unipi.mainpackage;
 public final class ContentAdmin extends User {
 
 	public ContentAdmin() {
-		super();
+		super(" "," "," ");
 		// TODO Auto-generated constructor stub
 	}
 	
