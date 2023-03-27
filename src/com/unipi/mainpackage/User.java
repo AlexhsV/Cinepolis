@@ -1,4 +1,4 @@
-package com.unipi.mainpackage;
+	package com.unipi.mainpackage;
 
 public abstract class User {
 	String name;
