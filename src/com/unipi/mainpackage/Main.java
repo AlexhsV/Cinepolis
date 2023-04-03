@@ -1,12 +1,21 @@
 package com.unipi.mainpackage;
 
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
+
+import javax.swing.BorderFactory;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
 public class Main {
 
+	
+
     public static void main(String[] args) {
-	    System.out.println("hello world");
-	    System.out.println("test2");
-	    System.out.println("test2");
-	    System.out.println("test2");
-	    System.out.println("test2");
+	 // new GUI(); to start gui -- later
+    	
+    	
+    	
+    	
     }
 }
