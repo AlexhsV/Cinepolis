@@ -21,8 +21,9 @@ public final class Customer extends User {
 		String availableFilms = "films123...";
 		return availableFilms;
 	}
-	public void makeReservation(String filmClicked) {
+	public void makeReservation(String filmClicked, int numberOfSeats) {
 		System.out.println("choose date, time");
+		System.out.println(numberOfSeats + " seats are booked for the film" + filmClicked);
 	}
 	public String showReservation() {
 		String reservation = "name,date,time...";

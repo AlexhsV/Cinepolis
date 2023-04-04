@@ -3,11 +3,11 @@
 import java.util.ArrayList;
 
 public abstract class User {
-	String name;
-	String username;
-	String password;
-	int user_type; //0 admin 1 content admin 2customer int giati einai pio eukolo apo char h strings sthn xrhsh px an theloume na kanoume gia int = vazoume = enw gia string equals
-	ArrayList<String> Users_Array = new ArrayList<String>(); //holds basic information about user -> username, password,type(admin,customer,contentadmin),name
+	private String name;
+	private String username;
+	private String password;
+	private int user_type; //0 admin 1 content admin 2customer int giati einai pio eukolo apo char h strings sthn xrhsh px an theloume na kanoume gia int = vazoume = enw gia string equals
+	private ArrayList<String> Users_Array = new ArrayList<String>(); //holds basic information about user -> username, password,type(admin,customer,contentadmin),name
 	
 	public User(String name, String username, String password, int user_type) {
 		setName(name);

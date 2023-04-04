@@ -42,8 +42,6 @@ public class Film {
 	}
 	
 
-	}
-
     public String getTitle (String filmTitle) {
     	return this.filmTitle;
     }

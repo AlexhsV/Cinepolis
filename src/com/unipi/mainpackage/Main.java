@@ -14,7 +14,10 @@ public class Main {
     public static void main(String[] args) {
 	 // new GUI(); to start gui -- later
     	
+    	//on first run ever
+    	Admin headAdmin = new Admin("KostasKoukos", "kokaki" , "eimaigay123");
     	
+    	headAdmin.createUser("ContentAdmin");
     	
     	
     }

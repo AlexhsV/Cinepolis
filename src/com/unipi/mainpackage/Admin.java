@@ -18,6 +18,7 @@ public final class Admin extends User{
 		}
 		else if (typeOfuser.equals("ContentAdmin")) {
 			ContentAdmin ca = new ContentAdmin(name, username, password);
+			ca.insertFilm("Oi Akataliloi","Action","empty description", false, 158);
 		}
 	}
 }
