@@ -1,22 +1,27 @@
 package com.unipi.mainpackage;
 
 public class Film {
-	int filmID; // sum <- total films k to kathe film tha exei filmID= sum+1
-	String filmTitle;
-	String filmCategory;
-	String filmDescription;
-	boolean filmP18;
-	int filmDuration;
+	private int filmID; // sum <- total films k to kathe film tha exei filmID= sum+1
+	private String filmTitle;
+	private String filmCategory;
+	private String filmDescription;
+	private boolean filmP18;
+	private int filmDuration;
 	
-	public Film( String filmTitle, String filmCategory, String filmDescription, boolean filmP18, int filmDuration) {
-		
-		setTitle(filmTitle);
-		setCategory(filmCategory);
-		setDescription(filmDescription);
-		setP18(filmP18);
-		setDuration(filmDuration);
+	
+	
+	public Film(int FilmSum, String filmTitle, String filmCategory, String filmDescription, boolean filmP18,	int filmDuration) {
+		FilmSum++;
+	    this.filmID = FilmSum;
+		this.filmTitle = filmTitle;
+		this.filmCategory = filmCategory;
+		this.filmDescription = filmDescription;
+		this.filmP18 = filmP18;
+		this.filmDuration = filmDuration;
 	}
-	
+
+
+
 	public void setTitle (String filmTitle) {
 		this.filmTitle = filmTitle;
 	}
@@ -41,31 +46,39 @@ public class Film {
 		this.filmDuration = filmDuration;
 	}
 	
+	public void setFilmID(int filmID) {
+		this.filmID = filmID;
+	}
+	
+	
 
-    public String getTitle (String filmTitle) {
-    	return this.filmTitle;
+    public String getTitle () {
+    	return filmTitle;
     }
     
     
-    public String getCategory(String filmCategory) {
-    	return this.filmCategory;
+    public String getCategory() {
+    	return filmCategory;
     }
     
     
-    public String getDescription(String filmDescription) {
-    	return this.filmDescription;
+    public String getDescription() {
+    	return filmDescription;
     }
     
     
     public boolean getP18(boolean filmP18) {
-    	return this.filmP18;
+    	return filmP18;
     }
     
     
-    public int getDuration(int filmDuration) {
-    	return this.filmDuration ;
+    public int getDuration() {
+    	return filmDuration ;
     }
     
+    public int getFilmID() {
+    	return this.filmID ;
+    }
     
     
     	

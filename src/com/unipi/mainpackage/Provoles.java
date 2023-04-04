@@ -3,20 +3,22 @@ package com.unipi.mainpackage;
 public class Provoles {
 	int provoliID;
 	String provoliFilm;
-	String provoliStartDate;
-	String provoliEndDate;
-	int provoliNumberOfReservations;
-	String provolesAvailable; // what is this used for?
+	String provoliDateOf;
+	String provoliStart;
+	String provoliEnd;
+	String provoliCinemaID;
+	//array 2d theseis seires to opoio penrei apo to cinema tou 
+    //na valoume ston customer dinatotia na dei an oi theseis pou dialexe yparxoun h oxi (provoliAvailable)
 	
-	public Provoles(int provoliID, String provoliFilm, String provoliStartDate, String provoliEndDate,
-			int provoliNumberOfReservations, String provolesAvailable) {
-
+	public Provoles(int provoliID, String provoliFilm, String provoliDateOf, String provoliStart, String provoliEnd,
+			String provoliCinemaID) {
+	
 		this.provoliID = provoliID;
 		this.provoliFilm = provoliFilm;
-		this.provoliStartDate = provoliStartDate;
-		this.provoliEndDate = provoliEndDate;
-		this.provoliNumberOfReservations = provoliNumberOfReservations;
-		this.provolesAvailable = provolesAvailable;
+		this.provoliDateOf = provoliDateOf;
+		this.provoliStart = provoliStart;
+		this.provoliEnd = provoliEnd;
+		this.provoliCinemaID = provoliCinemaID;
 	}
 
 	public int getProvoliID() {
@@ -35,38 +37,42 @@ public class Provoles {
 		this.provoliFilm = provoliFilm;
 	}
 
-	public String getProvoliStartDate() {
-		return provoliStartDate;
+	public String getProvoliDateOf() {
+		return provoliDateOf;
 	}
 
-	public void setProvoliStartDate(String provoliStartDate) {
-		this.provoliStartDate = provoliStartDate;
+	public void setProvoliDateOf(String provoliDateOf) {
+		this.provoliDateOf = provoliDateOf;
 	}
 
-	public String getProvoliEndDate() {
-		return provoliEndDate;
+	public String getProvoliStart() {
+		return provoliStart;
 	}
 
-	public void setProvoliEndDate(String provoliEndDate) {
-		this.provoliEndDate = provoliEndDate;
+	public void setProvoliStart(String provoliStart) {
+		this.provoliStart = provoliStart;
 	}
 
-	public int getProvoliNumberOfReservations() {
-		return provoliNumberOfReservations;
+	public String getProvoliEnd() {
+		return provoliEnd;
 	}
 
-	public void setProvoliNumberOfReservations(int provoliNumberOfReservations) {
-		this.provoliNumberOfReservations = provoliNumberOfReservations;
+	public void setProvoliEnd(String provoliEnd) {
+		this.provoliEnd = provoliEnd;
 	}
 
-	public String getProvolesAvailable() {
-		return provolesAvailable;
+	public String getProvoliCinemaID() {
+		return provoliCinemaID;
 	}
 
-	public void setProvolesAvailable(String provolesAvailable) {
-		this.provolesAvailable = provolesAvailable;
+	public void setProvoliCinemaID(String provoliCinemaID) {
+		this.provoliCinemaID = provoliCinemaID;
 	}
 	
+	
+
+	
+  
 	
 	
 }

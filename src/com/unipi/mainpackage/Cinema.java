@@ -1,9 +1,10 @@
 package com.unipi.mainpackage;
 
-public class Cinema {
+public class Cinema {  //cienma = ethousa
 	int cinemaID;
 	boolean cinemasIs3D;
 	int cinmeaNumberOfSeats;
+	//array 2d theseis seires
 	
 	public Cinema(int cinemaID, boolean cinemasIs3D, int cinmeaNumberOfSeats) {
 		this.cinemaID = cinemaID;
@@ -19,7 +20,7 @@ public class Cinema {
 		this.cinemaID = cinemaID;
 	}
 
-	public boolean isCinemasIs3D() {
+	public boolean getCinemasIs3D() {
 		return cinemasIs3D;
 	}
 
@@ -35,5 +36,5 @@ public class Cinema {
 		this.cinmeaNumberOfSeats = cinmeaNumberOfSeats;
 	}
 	
-	
+
 }

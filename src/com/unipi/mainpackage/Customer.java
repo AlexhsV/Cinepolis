@@ -1,5 +1,7 @@
 package com.unipi.mainpackage;
 
+import java.util.ArrayList;
+
 public final class Customer extends User {
 	String dateOfBirth; // in order to access an adult film
 
