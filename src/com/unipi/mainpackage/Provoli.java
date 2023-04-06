@@ -10,15 +10,15 @@ public class Provoli {
 	private Film provoliFilm;
 	private Cinema provoliCinema;
 	private String provoliDay;
-	private String provoliStartTime;
-	private String provoliEndTime; 
+	private LocalTime provoliStartTime;
+	private LocalTime provoliEndTime; 
 	private int provoliNumberOfReservations;
 	private boolean provoliIsAvailable;
 	private static ArrayList<Provoli> Provoles_Array = new ArrayList<Provoli>();
 	//array 2d theseis seires to opoio penrei apo to cinema tou 
     //na valoume ston customer dinatotia na dei an oi theseis pou dialexe yparxoun h oxi (provoliAvailable)
 	
-	public Provoli(int provoliID, Film provoliFilm,Cinema provoliCinema, String provoliDay, String provoliStartTime, boolean provoliIsAvailable) {
+	public Provoli(int provoliID, Film provoliFilm,Cinema provoliCinema, String provoliDay, LocalTime provoliStartTime, boolean provoliIsAvailable) {
 	
 		this.provoliID = provoliID;
 		this.provoliFilm = provoliFilm;
@@ -65,19 +65,19 @@ public class Provoli {
 		this.provoliDay = provoliDay;
 	}
 
-	public String getProvoliStartTime() {
+	public LocalTime getProvoliStartTime() {
 		return provoliStartTime;
 	}
 
-	public void setProvoliStartTime(String provoliStartTime) {
+	public void setProvoliStartTime(LocalTime provoliStartTime) {
 		this.provoliStartTime = provoliStartTime;
 	}
 
-	public String getProvoliEndTime() {
+	public LocalTime getProvoliEndTime() {
 		return provoliEndTime;
 	}
 
-	public void setProvoliEndTime(String provoliEndTime) {
+	public void setProvoliEndTime(LocalTime provoliEndTime) {
 		this.provoliEndTime = provoliEndTime;
 	}
 
@@ -104,6 +104,15 @@ public class Provoli {
 	public static void setProvoles_Array(ArrayList<Provoli> provoles_Array) {
 		Provoles_Array = provoles_Array;
 	}
+
+	@Override
+	public String toString() {
+		return "Provoli [provoliID=" + provoliID + ", provoliFilm=" + provoliFilm + ", provoliCinema=" + provoliCinema
+				+ ", provoliDay=" + provoliDay + ", provoliStartTime=" + provoliStartTime + ", provoliEndTime="
+				+ provoliEndTime + ", provoliNumberOfReservations=" + provoliNumberOfReservations
+				+ ", provoliIsAvailable=" + provoliIsAvailable + "]";
+	}
+
 
 	
 	

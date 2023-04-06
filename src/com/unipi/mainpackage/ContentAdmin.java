@@ -1,6 +1,7 @@
 package com.unipi.mainpackage;
 
 import java.time.Duration;
+import java.time.LocalTime;
 
 public final class ContentAdmin extends User {
 
@@ -10,7 +11,7 @@ public final class ContentAdmin extends User {
 	}
 	
 	public void insertFilm(String filmTitle,String filmCategory, String filmDescription , boolean filmP18, Duration filmDuration, String filmDateOfPremiere) {
-		Film.getFilms_Array().add(new Film(filmTitle, filmCategory, filmDescription , filmP18,  filmDuration, filmDateOfPremiere));
+		Film.getFilms_Array().add(new Film(filmTitle, filmCategory, filmDescription , filmP18, filmDuration, filmDateOfPremiere));
 	}
 	
     public void deleteFilm(int filmID) {
@@ -42,7 +43,7 @@ public final class ContentAdmin extends User {
 		return -1;
     }  
     
-    public void createProvoli(int provoliID, Film provoliFilm, Cinema provoliCinema, String provoliDay, String provoliStartTime, boolean filmIsAvailable) {
+    public void createProvoli(int provoliID, Film provoliFilm, Cinema provoliCinema, String provoliDay, LocalTime provoliStartTime, boolean filmIsAvailable) {
 		Provoli.getProvoles_Array().add( new Provoli(provoliID, provoliFilm, provoliCinema, provoliDay , provoliStartTime, filmIsAvailable));
 		
 	}
