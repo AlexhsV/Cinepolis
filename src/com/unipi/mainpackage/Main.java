@@ -1,15 +1,10 @@
 package com.unipi.mainpackage;
 
-import java.awt.BorderLayout;
-import java.awt.GridLayout;
-import java.util.ArrayList;
-
-import javax.swing.BorderFactory;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
- import java.time.Duration;
+import java.io.*;
+import java.time.Duration;
 import java.time.LocalTime;
-public class Main {
+
+public class Main{
 
 	
     public static void main(String[] args) {
@@ -55,6 +50,30 @@ public class Main {
     	for (Provoli provoli : Provoli.getProvoles_Array()) {
     	    System.out.println(provoli.toString());
     	}
+    	
+
+    	try {
+               FileOutputStream fileOut =
+               new FileOutputStream("cinepolis.ser");
+               ObjectOutputStream out = new ObjectOutputStream(fileOut);
+               for (User user : User.getUsers_Array()) {
+            	   out.writeObject(user);
+           		}
+               for (Film film : Film.getFilms_Array()) {
+            	   out.writeObject(film);
+           		}
+               for (Cinema cinema : Cinema.getCinemas_Array()) {
+            	   out.writeObject(cinema);
+           		}
+               for (Provoli provoli : Provoli.getProvoles_Array()) {
+            	   out.writeObject(provoli);
+           		}
+               out.close();
+               fileOut.close();
+               System.out.printf("Serialized data is saved in /tmp/employee.ser");
+            } catch (IOException i) {
+               i.printStackTrace();
+            }
     	
     }
     

@@ -1,9 +1,10 @@
 package com.unipi.mainpackage;
 
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Cinema {  //cinema = aithousa
+public class Cinema implements Serializable{  //cinema = aithousa
 	private String cinemaID;
 	private boolean cinemasIs3D;
 	private int cinmeaNumberOfSeats;

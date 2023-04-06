@@ -1,9 +1,10 @@
 package com.unipi.mainpackage;
 
 import java.util.ArrayList;
+import java.io.Serializable;
 import java.time.Duration;
 
-public class Film {
+public class Film implements Serializable{
 	private int filmID; // sum <- total films k to kathe film tha exei filmID= sum+1
 	private String filmTitle;
 	private String filmCategory;

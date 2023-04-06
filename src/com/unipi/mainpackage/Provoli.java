@@ -1,10 +1,11 @@
 package com.unipi.mainpackage;
 
 import java.util.ArrayList;
+import java.io.Serializable;
 import java.time.LocalTime;
 
 
-public class Provoli {
+public class Provoli implements Serializable {
 	private int provoliID;
 	private Film provoliFilm;
 	private Cinema provoliCinema;
