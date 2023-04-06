@@ -22,11 +22,16 @@ public final class Customer extends User {
 		String availableFilms = "films123...";
 		return availableFilms;
 	}
-	public void makeReservation(String filmClicked, int numberOfSeats) {
+	public void makeReservation(int provoliID, int numberOfSeats) {
 		System.out.println("choose date, time");
-		System.out.println(numberOfSeats + " seats are booked for the film" + filmClicked);
+		for (Provoli provoli : Provoli.getProvoles_Array()) {
+    	    if(provoli.getProvoliID() == provoliID && provoli.getProvoliIsAvailable()) {
+    	    	provoli.setProvoliNumberOfReservations(provoli.getProvoliNumberOfReservations() + 1);
+    	    }
+    	}
+		System.out.println(numberOfSeats + " seats are booked for the film" + provoliID);
 	}
-	public String showReservation() {
+	public String showReservation(int provoliID) {
 		String reservation = "name,date,time...";
 		return reservation;
 	}

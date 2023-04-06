@@ -2,7 +2,6 @@ package com.unipi.mainpackage;
 
 import java.util.ArrayList;
 import java.time.LocalTime;
-import java.time.Duration;
 
 
 public class Provoli {
@@ -71,6 +70,7 @@ public class Provoli {
 
 	public void setProvoliStartTime(LocalTime provoliStartTime) {
 		this.provoliStartTime = provoliStartTime;
+		this.provoliEndTime = provoliStartTime.plus(provoliFilm.getFilmDuration());
 	}
 
 	public LocalTime getProvoliEndTime() {
@@ -89,7 +89,7 @@ public class Provoli {
 		this.provoliNumberOfReservations = provoliNumberOfReservations;
 	}
 
-	public boolean isProvoliIsAvailable() {
+	public boolean getProvoliIsAvailable() {
 		return provoliIsAvailable;
 	}
 
@@ -113,6 +113,16 @@ public class Provoli {
 				+ ", provoliIsAvailable=" + provoliIsAvailable + "]";
 	}
 
+	public boolean checkProvoliIsAvailable() {
+		if (provoliNumberOfReservations < provoliCinema.getCinmeaNumberOfSeats()) {
+			provoliIsAvailable = true;
+			return provoliIsAvailable;
+		}
+		else{
+			provoliIsAvailable = false;
+			return provoliIsAvailable;
+		}
+	}
 
 	
 	

@@ -28,10 +28,6 @@ public final class ContentAdmin extends User {
     	System.out.println("film deleted");
 	}
 	
-    public void assignFilmToCinema(int filmID, int cinemaID) {
-    	//me ton setter tou kathe cinema kanei assign ena film antikeimeno
-    }  
-
     public int searchFilm(int filmID) {
     	
     	for(int i=0 ; i< Film.getFilms_Array().size() ; i++) {

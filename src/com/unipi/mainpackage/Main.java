@@ -47,8 +47,15 @@ public class Main {
     	
     
     	for (Provoli provoli : Provoli.getProvoles_Array()) {
-    	    System.out.println(provoli.toString()); // assuming the Provoli class has a toString() method that returns a String representation of the object
+    	    System.out.println(provoli.toString());
     	}
+    	
+    	Provoli.getProvoles_Array().get(0).setProvoliStartTime(LocalTime.parse("14:00"));
+    	
+    	for (Provoli provoli : Provoli.getProvoles_Array()) {
+    	    System.out.println(provoli.toString());
+    	}
+    	
     }
     
     
