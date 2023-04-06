@@ -7,7 +7,7 @@ public abstract class User {
 	private String username;
 	private String password;
 	private int user_type; //0 admin 1 content admin 2customer int giati einai pio eukolo apo char h strings sthn xrhsh px an theloume na kanoume gia int = vazoume = enw gia string equals
-
+	private static ArrayList<User> Users_Array = new ArrayList<User>(); //holds basic information about user -> username, password,type(admin,customer,contentadmin),name
 	
 
 	
@@ -46,9 +46,6 @@ public abstract class User {
 		this.password = password;
 	}
 	
-	public void setType(int user_type) {
-		this.user_type = user_type;
-	}
 	
 	public String getName() {
 		return name;
@@ -62,10 +59,22 @@ public abstract class User {
 		return password;
 	}
 	
-	public int getType() {
+	public int getUser_type() {
 		return user_type;
 	}
+
+	public void setUser_type(int user_type) {
+		this.user_type = user_type;
+	}
 	
+	public static ArrayList<User> getUsers_Array() {
+		return Users_Array;
+	}
+
+	public static void setUsers_Array(ArrayList<User> users_Array) {
+		Users_Array = users_Array;
+	}
+
 	
     //etsi oste oloi oi user na mporoun na allaxoun onoma kwdiko kai na kanoun delete acc
 	

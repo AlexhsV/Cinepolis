@@ -1,6 +1,6 @@
 package com.unipi.mainpackage;
 
-import java.util.ArrayList;
+import java.time.Duration;
 
 public final class ContentAdmin extends User {
 
@@ -9,39 +9,43 @@ public final class ContentAdmin extends User {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public void insertFilm(int FilmSum, String filmTitle,String filmCategory, String filmDescription , boolean filmP18, int filmDuration, ArrayList<Film> Films_Array ) {
-		Films_Array.add(new Film(FilmSum,filmTitle, filmCategory, filmDescription , filmP18,  filmDuration));
-		
+	public void insertFilm(String filmTitle,String filmCategory, String filmDescription , boolean filmP18, Duration filmDuration, String filmDateOfPremiere) {
+		Film.getFilms_Array().add(new Film(filmTitle, filmCategory, filmDescription , filmP18,  filmDuration, filmDateOfPremiere));
 	}
 	
-    public void deleteFilm(int filmID, ArrayList<Film> Films) {
+    public void deleteFilm(int filmID) {
     	
-    	int temp = searchFilm(filmID, Films);
+    	int temp = searchFilm(filmID);
     	
     	if(temp>-1) {
-    		Films.remove(temp);
-    		for(int i = temp ; i <Films.size() ;i++ ) {
-    			Films.get(i).setFilmID(Films.get(i).getFilmID()-1);
+    		Film.getFilms_Array().remove(temp);
+    		for(int i = temp ; i <Film.getFilms_Array().size() ;i++ ) {
+    			Film.getFilms_Array().get(i).setFilmID(Film.getFilms_Array().get(i).getFilmID()-1);
     		}
     	}
     	
     	System.out.println("film deleted");
 	}
 	
-    public void assignFilmToCinema(int filmID) {
+    public void assignFilmToCinema(int filmID, int cinemaID) {
     	//me ton setter tou kathe cinema kanei assign ena film antikeimeno
     }  
 
-    public int searchFilm(int filmID, ArrayList<Film> Films) {
+    public int searchFilm(int filmID) {
     	
-    	for(int i=0 ; i< Films.size() ; i++) {
-			if(filmID == Films.get(i).getFilmID()){
+    	for(int i=0 ; i< Film.getFilms_Array().size() ; i++) {
+			if(filmID == Film.getFilms_Array().get(i).getFilmID()){
 				return i;
 			}
 		}
 		
 		return -1;
     }  
+    
+    public void createProvoli(int provoliID, Film provoliFilm, Cinema provoliCinema, String provoliDay, String provoliStartTime, boolean filmIsAvailable) {
+		Provoli.getProvoles_Array().add( new Provoli(provoliID, provoliFilm, provoliCinema, provoliDay , provoliStartTime, filmIsAvailable));
+		
+	}
 
 }
  

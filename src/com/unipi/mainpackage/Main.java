@@ -10,41 +10,40 @@ import javax.swing.JPanel;
 
 public class Main {
 
-	public static ArrayList<User> Users_Array = new ArrayList<User>(); //holds basic information about user -> username, password,type(admin,customer,contentadmin),name
-	public static ArrayList<Film> Films_Array = new ArrayList<Film>();
-	public static ArrayList<Cinema> Cineams_Array = new ArrayList<Cinema>();
-	public static int FilmSum=0;
+	
     public static void main(String[] args) {
 	 // new GUI(); to start gui -- later
     	
     	//on first run ever
     	
     	
-    	Admin headAdmin = CreateAdmin("KostasKoukos", "kokaki" , "eimaigay123");
+    	Admin headAdmin = new Admin("KostasKoukos", "kokaki" , "eimaigay123");
+    	User.getUsers_Array().add(headAdmin);
     	
     	
-    	Users_Array.add(headAdmin.createCustomer("AlexhsVasileiou","alexhs.v","alexhs123","20-09-2003"));
+    	
+    	User.getUsers_Array().add(headAdmin.createCustomer("AlexhsVasileiou","alexhs.v","alexhs123","20-09-2003"));
     	ContentAdmin headContentAdmin = headAdmin.createContentAdmin("AlexhsVasileiou","alexhs.vc","alexhs123");
-    	Users_Array.add(headContentAdmin);
+    	User.getUsers_Array().add(headContentAdmin);
     	
-        headAdmin.updateUser("kokaki","IoannisKroitor","kroitor","eimaistraight123", Users_Array);
+        headAdmin.updateUser("kokaki","IoannisKroitor","kroitor","eimaistraight123");
      
-        headAdmin.viewAllUsers(Users_Array);
+        headAdmin.viewAllUsers();
         
-        headContentAdmin.insertFilm(FilmSum,"Epoxh tou kroitor", "erotiki", "O megas kroitor se nees peripeties me fasaies", true,	69, Films_Array);
-        FilmSum++;
-        headContentAdmin.insertFilm(FilmSum,"Epoxh tou vasileiou", "fantasia", "O megas alexhs v se nees peripeties me fasaious", true,	420, Films_Array);
-        FilmSum++;
-        System.out.println(Films_Array.get(1).getTitle());
-    	System.out.println(FilmSum);
+        headContentAdmin.insertFilm("Epoxh tou kroitor", "erotiki", "O megas kroitor se nees peripeties me fasaies", true,	69, "25/03/2023" );
+        
+        headContentAdmin.insertFilm("Epoxh tou vasileiou", "fantasia", "O megas alexhs v se nees peripeties me fasaious", true,420,"12/03/2023");
+        
+        headAdmin.createCinema("aithousa Asteria", false, 120);
+       
+        System.out.println(Film.getFilms_Array().get(1).getFilmTitle());
+        
+    	System.out.println();
+    	
+    	
+    	//mporoume an theloume na ginoun static oi methodoi opote na mhn theloume object gia na tis kaloume
+    	headContentAdmin.createProvoli(1, Film.getFilms_Array().get(1), Cinema.getCinemas_Array().get(1), ", null);
     }
     
     
-    public static Admin CreateAdmin(String name, String username, String password) {  //gia otan valoume database
-    	
-    	
-    	Admin Admin = new Admin("KostasKoukos", "kokaki" , "eimaigay123");
-    	Users_Array.add(Admin);
-    	return Admin;
-    }
 }

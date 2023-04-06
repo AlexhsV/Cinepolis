@@ -1,0 +1,110 @@
+package com.unipi.mainpackage;
+
+import java.util.ArrayList;
+import java.time.LocalTime;
+import java.time.Duration;
+
+
+public class Provoli {
+	private int provoliID;
+	private Film provoliFilm;
+	private Cinema provoliCinema;
+	private String provoliDay;
+	private String provoliStartTime;
+	private String provoliEndTime; 
+	private int provoliNumberOfReservations;
+	private boolean provoliIsAvailable;
+	private static ArrayList<Provoli> Provoles_Array = new ArrayList<Provoli>();
+	//array 2d theseis seires to opoio penrei apo to cinema tou 
+    //na valoume ston customer dinatotia na dei an oi theseis pou dialexe yparxoun h oxi (provoliAvailable)
+	
+	public Provoli(int provoliID, Film provoliFilm,Cinema provoliCinema, String provoliDay, String provoliStartTime, boolean provoliIsAvailable) {
+	
+		this.provoliID = provoliID;
+		this.provoliFilm = provoliFilm;
+		this.provoliCinema = provoliCinema;
+		this.provoliDay = provoliDay;
+		this.provoliStartTime = provoliStartTime;
+		this.provoliEndTime = provoliStartTime.plus(provoliFilm.getFilmDuration());
+		this.provoliNumberOfReservations = 0;
+		this.provoliIsAvailable = provoliIsAvailable;
+		// kanei get xoritikotita aithousas kai elegxedi an xwraei ara einai avilable
+		//pinakas me oles tis provoles den diagrafontai apla  to available gienta itrue false
+		//to provoiliISAVAILABKLE einai kalo na uaprxei sto database apla se auton pou kleinei tha deixnoume mono tis available provoles
+	}
+
+	public int getProvoliID() {
+		return provoliID;
+	}
+
+	public void setProvoliID(int provoliID) {
+		this.provoliID = provoliID;
+	}
+
+	public Film getProvoliFilm() {
+		return provoliFilm;
+	}
+
+	public void setProvoliFilm(Film provoliFilm) {
+		this.provoliFilm = provoliFilm;
+	}
+
+	public Cinema getProvoliCinema() {
+		return provoliCinema;
+	}
+
+	public void setProvoliCinema(Cinema provoliCinema) {
+		this.provoliCinema = provoliCinema;
+	}
+
+	public String getProvoliDay() {
+		return provoliDay;
+	}
+
+	public void setProvoliDay(String provoliDay) {
+		this.provoliDay = provoliDay;
+	}
+
+	public String getProvoliStartTime() {
+		return provoliStartTime;
+	}
+
+	public void setProvoliStartTime(String provoliStartTime) {
+		this.provoliStartTime = provoliStartTime;
+	}
+
+	public String getProvoliEndTime() {
+		return provoliEndTime;
+	}
+
+	public void setProvoliEndTime(String provoliEndTime) {
+		this.provoliEndTime = provoliEndTime;
+	}
+
+	public int getProvoliNumberOfReservations() {
+		return provoliNumberOfReservations;
+	}
+
+	public void setProvoliNumberOfReservations(int provoliNumberOfReservations) {
+		this.provoliNumberOfReservations = provoliNumberOfReservations;
+	}
+
+	public boolean isProvoliIsAvailable() {
+		return provoliIsAvailable;
+	}
+
+	public void setProvoliIsAvailable(boolean provoliIsAvailable) {
+		this.provoliIsAvailable = provoliIsAvailable;
+	}
+
+	public static ArrayList<Provoli> getProvoles_Array() {
+		return Provoles_Array;
+	}
+
+	public static void setProvoles_Array(ArrayList<Provoli> provoles_Array) {
+		Provoles_Array = provoles_Array;
+	}
+
+	
+	
+}

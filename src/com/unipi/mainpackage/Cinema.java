@@ -1,22 +1,26 @@
 package com.unipi.mainpackage;
 
-public class Cinema {  //cienma = ethousa
-	int cinemaID;
-	boolean cinemasIs3D;
-	int cinmeaNumberOfSeats;
+
+import java.util.ArrayList;
+
+public class Cinema {  //cinema = aithousa
+	private String cinemaID;
+	private boolean cinemasIs3D;
+	private int cinmeaNumberOfSeats;
+	private static ArrayList<Cinema> Cinemas_Array = new ArrayList<Cinema>();
 	//array 2d theseis seires
 	
-	public Cinema(int cinemaID, boolean cinemasIs3D, int cinmeaNumberOfSeats) {
+	public Cinema(String cinemaID, boolean cinemasIs3D, int cinmeaNumberOfSeats) {
 		this.cinemaID = cinemaID;
 		this.cinemasIs3D = cinemasIs3D;
 		this.cinmeaNumberOfSeats = cinmeaNumberOfSeats;
 	}
 
-	public int getCinemaID() {
+	public String getCinemaID() {
 		return cinemaID;
 	}
 
-	public void setCinemaID(int cinemaID) {
+	public void setCinemaID(String cinemaID) {
 		this.cinemaID = cinemaID;
 	}
 
@@ -35,6 +39,15 @@ public class Cinema {  //cienma = ethousa
 	public void setCinmeaNumberOfSeats(int cinmeaNumberOfSeats) {
 		this.cinmeaNumberOfSeats = cinmeaNumberOfSeats;
 	}
+
+	public static ArrayList<Cinema> getCinemas_Array() {
+		return Cinemas_Array;
+	}
+
+	public static void setCinemas_Array(ArrayList<Cinema> cinemas_Array) {
+		Cinemas_Array = cinemas_Array;
+	}
 	
 
+	
 }
