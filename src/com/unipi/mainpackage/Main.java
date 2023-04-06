@@ -3,6 +3,7 @@ package com.unipi.mainpackage;
 import java.io.*;
 import java.time.Duration;
 import java.time.LocalTime;
+import java.util.ArrayList;
 
 public class Main{
 
@@ -13,24 +14,84 @@ public class Main{
     	//on first run ever
     	
     	
-    	Admin headAdmin = new Admin("KostasKoukos", "kokaki" , "eimaigay123");
-    	User.getUsers_Array().add(headAdmin);
+    	//deserialize
     	
+    	 try {
+             FileInputStream fileIn = new FileInputStream("cinepolis.ser");
+             ObjectInputStream in = new ObjectInputStream(fileIn);
+             System.out.println("USERS-----");
+             @SuppressWarnings("unchecked")
+             ArrayList<User> temp1 = (ArrayList<User>) in.readObject();
+             for(@SuppressWarnings("unused") User user:temp1) {
+            	 
+            	 User.getUsers_Array().add(user);
+            	System.out.println( user.getName());
+             }
+             System.out.println("FILMS-----");
+             @SuppressWarnings("unchecked")
+ 			ArrayList<Film> temp2 = (ArrayList<Film>) in.readObject();
+              for(@SuppressWarnings("unused") Film film:temp2) {
+             
+             	 Film.getFilms_Array().add(film);
+             	System.out.println( film.getFilmTitle());
+              }
+              System.out.println("CINEMA-----");
+              @SuppressWarnings("unchecked")
+   			ArrayList<Cinema> temp3 = (ArrayList<Cinema>) in.readObject();
+                for(@SuppressWarnings("unused") Cinema cinema:temp3) {
+               
+               	Cinema.getCinemas_Array().add(cinema);
+               	System.out.println( cinema.getCinemaID());
+                }
+                System.out.println("PROVOLES-----");
+             @SuppressWarnings("unchecked")
+       	    ArrayList<Provoli> temp4 = (ArrayList<Provoli>) in.readObject();
+                    for(@SuppressWarnings("unused") Provoli provoli:temp4) {
+                  
+                  Provoli.getProvoles_Array().add(provoli);
+                   	System.out.println( provoli.getProvoliID());
+                    }
+                   
+                
+                
+               
+              
+             in.close();
+             fileIn.close();
+             temp1=null;
+             temp2=null;
+             temp3=null;
+             temp4=null;
+             System.gc();
+          } catch (FileNotFoundException c) {
+        	  //an dn uparxei to arxeio kanei load dummy data
+        	  System.out.println("new file.");
+        	  Admin headAdmin = new Admin("KostasKoukos", "kokaki" , "eimaigay123");
+          	  User.getUsers_Array().add(headAdmin);
+              User.getUsers_Array().add(headAdmin.createCustomer("AlexhsVasileiou","alexhs.v","alexhs123","20-09-2003"));
+              ContentAdmin headContentAdmin = headAdmin.createContentAdmin("AlexhsVasileiou","alexhs.vc","alexhs123");
+              User.getUsers_Array().add(headContentAdmin);
+         
+              headAdmin.updateUser("kokaki","IoannisKroitor","kroitor","eimaistraight123");
+         
+              headAdmin.viewAllUsers();
+            
+              headContentAdmin.insertFilm("Epoxh tou kroitor3", "erotiki", "O megas kroitor se nees peripeties me fasaies", true,	Duration.ofMinutes(60), "25/03/2023" );
+         
+              headContentAdmin.insertFilm("Epoxh tou vasileiou", "fantasia", "O megas alexhs v se nees peripeties me fasaious", true, Duration.ofMinutes(420), "12/03/2023");
+         
+              headAdmin.createCinema("aithousa Asteria", false, 120);
+              headAdmin.createCinema("aithousa Ilios", false, 120);
+          } catch (IOException i) {
+             i.printStackTrace();
+             return;
+          } catch (ClassNotFoundException c) {
+             System.out.println("Employee class not found");
+             c.printStackTrace();
+             return;
+          }
     	
-    	
-    	User.getUsers_Array().add(headAdmin.createCustomer("AlexhsVasileiou","alexhs.v","alexhs123","20-09-2003"));
-    	ContentAdmin headContentAdmin = headAdmin.createContentAdmin("AlexhsVasileiou","alexhs.vc","alexhs123");
-    	User.getUsers_Array().add(headContentAdmin);
-    	
-        headAdmin.updateUser("kokaki","IoannisKroitor","kroitor","eimaistraight123");
-     
-        headAdmin.viewAllUsers();
-        
-        headContentAdmin.insertFilm("Epoxh tou kroitor", "erotiki", "O megas kroitor se nees peripeties me fasaies", true,	Duration.ofMinutes(60), "25/03/2023" );
-        
-        headContentAdmin.insertFilm("Epoxh tou vasileiou", "fantasia", "O megas alexhs v se nees peripeties me fasaious", true, Duration.ofMinutes(420), "12/03/2023");
-        
-        headAdmin.createCinema("aithousa Asteria", false, 120);
+    
        
         System.out.println(Film.getFilms_Array().get(1).getFilmTitle());
         
@@ -38,44 +99,41 @@ public class Main{
     	
     	
     	//mporoume an theloume na ginoun static oi methodoi opote na mhn theloume object gia na tis kaloume
-    	headContentAdmin.createProvoli(0, Film.getFilms_Array().get(0), Cinema.getCinemas_Array().get(0),"24/06/2023", LocalTime.parse("19:20"), true);
+    	//headContentAdmin.createProvoli(0, Film.getFilms_Array().get(0), Cinema.getCinemas_Array().get(0),"24/06/2023", LocalTime.parse("19:20"), true);
     	
     
-    	for (Provoli provoli : Provoli.getProvoles_Array()) {
-    	    System.out.println(provoli.toString());
-    	}
-    	
-    	Provoli.getProvoles_Array().get(0).setProvoliStartTime(LocalTime.parse("14:00"));
-    	
-    	for (Provoli provoli : Provoli.getProvoles_Array()) {
-    	    System.out.println(provoli.toString());
-    	}
-    	
-
-    	try {
-               FileOutputStream fileOut =
-               new FileOutputStream("cinepolis.ser");
-               ObjectOutputStream out = new ObjectOutputStream(fileOut);
-               for (User user : User.getUsers_Array()) {
-            	   out.writeObject(user);
-           		}
-               for (Film film : Film.getFilms_Array()) {
-            	   out.writeObject(film);
-           		}
-               for (Cinema cinema : Cinema.getCinemas_Array()) {
-            	   out.writeObject(cinema);
-           		}
-               for (Provoli provoli : Provoli.getProvoles_Array()) {
-            	   out.writeObject(provoli);
-           		}
-               out.close();
-               fileOut.close();
-               System.out.printf("Serialized data is saved in /tmp/employee.ser");
-            } catch (IOException i) {
-               i.printStackTrace();
-            }
-    	
-    }
+  	for (Provoli provoli : Provoli.getProvoles_Array()) {
+  	    System.out.println(provoli.toString());
+  	}
+  	
+  	//Provoli.getProvoles_Array().get(0).setProvoliStartTime(LocalTime.parse("14:00"));
+  	
+    //	for (Provoli provoli : Provoli.getProvoles_Array()) {
+    //	    System.out.println(provoli.toString());
+    //	}
+    //	
+      //Serialize
+  	try {
+             FileOutputStream fileOut = new FileOutputStream("cinepolis.ser");
+             ObjectOutputStream out = new ObjectOutputStream(fileOut);
+        
+             
+             out.writeObject(User.getUsers_Array());
+             
+             out.writeObject(Film.getFilms_Array());
+           
+             out.writeObject(Cinema.getCinemas_Array());
+            
+             out.writeObject(Provoli.getProvoles_Array());
+             out.close();
+             fileOut.close();
+             System.out.printf("Serialized data is saved in cinepolis.ser");
+          } catch (IOException i) {
+             i.printStackTrace();
+          }
+  	
+  }
+    
     
     
 }
