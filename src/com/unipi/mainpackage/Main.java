@@ -17,7 +17,7 @@ public class Main{
     	//deserialize
     	
     	 try {
-             FileInputStream fileIn = new FileInputStream("cinepolis.ser");
+             FileInputStream fileIn = new FileInputStream("cinepolis.txt");
              ObjectInputStream in = new ObjectInputStream(fileIn);
              System.out.println("USERS-----");
              @SuppressWarnings("unchecked")
@@ -114,7 +114,7 @@ public class Main{
     //	
       //Serialize
   	try {
-             FileOutputStream fileOut = new FileOutputStream("cinepolis.ser");
+             FileOutputStream fileOut = new FileOutputStream("cinepolis.txt");
              ObjectOutputStream out = new ObjectOutputStream(fileOut);
         
              
@@ -127,7 +127,7 @@ public class Main{
              out.writeObject(Provoli.getProvoles_Array());
              out.close();
              fileOut.close();
-             System.out.printf("Serialized data is saved in cinepolis.ser");
+             System.out.printf("Serialized data is saved in cinepolis.txt");
           } catch (IOException i) {
              i.printStackTrace();
           }

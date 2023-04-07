@@ -84,6 +84,11 @@ public class Film implements Serializable{
 
 	public void setFilmDuration(Duration filmDuration) {
 		this.filmDuration = filmDuration;
+		for (Provoli provoli : Provoli.getProvoles_Array()) {
+			  if (provoli.getProvoliFilm().filmID == this.filmID) {
+				  provoli.getProvoliFilm().setFilmDuration(filmDuration);;
+			  }
+			}
 	}
 
 	public String getFilmDateOfPremiere() {
