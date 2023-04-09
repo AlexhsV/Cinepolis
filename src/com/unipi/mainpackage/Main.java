@@ -68,19 +68,19 @@ public class Main{
           } catch (FileNotFoundException c) {
         	  //an dn uparxei to arxeio kanei load dummy data
         	  System.out.println("new file.");
-        	  Admin headAdmin = new Admin("KostasKoukos", "kokaki" , "eimaigay123");
+        	  Admin headAdmin = new Admin("KostasKoukos", "kokaki" , "123");
           	  User.getUsers_Array().add(headAdmin);
               User.getUsers_Array().add(headAdmin.createCustomer("AlexhsVasileiou","alexhs.v","alexhs123","20-09-2003"));
               ContentAdmin headContentAdmin = headAdmin.createContentAdmin("AlexhsVasileiou","alexhs.vc","alexhs123");
               User.getUsers_Array().add(headContentAdmin);
          
-              headAdmin.updateUser("kokaki","IoannisKroitor","kroitor","eimaistraight123");
+              headAdmin.updateUser("kokaki","IoannisKroitor","kroitor","123");
          
               headAdmin.viewAllUsers();
             
-              headContentAdmin.insertFilm("Epoxh tou kroitor3", "erotiki", "O megas kroitor se nees peripeties me fasaies", true,	Duration.ofMinutes(60), "25/03/2023" );
+              headContentAdmin.insertFilm("Epoxh twn drakwn", "action", "description", true,	Duration.ofMinutes(60), "25/03/2023" );
          
-              headContentAdmin.insertFilm("Epoxh tou vasileiou", "fantasia", "O megas alexhs v se nees peripeties me fasaious", true, Duration.ofMinutes(420), "12/03/2023");
+              headContentAdmin.insertFilm("Epoxh twn deinosayrwn", "fantasia", "description", true, Duration.ofMinutes(420), "12/03/2023");
          
               headAdmin.createCinema("aithousa Asteria", false, 120);
               headAdmin.createCinema("aithousa Ilios", false, 120);
