@@ -17,10 +17,10 @@ public class Main{
     	
     	//on first run ever
     	
-    	Connection conn = null;
+    	
     	try {
     		System.out.println("in");
-    		conn = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3307/cinema_last","root","ioannis");
+    		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/cinema_last","root","toor");
 
     		if(conn!=null)
     		{
