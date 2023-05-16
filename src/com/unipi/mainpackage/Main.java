@@ -1,9 +1,13 @@
 package com.unipi.mainpackage;
 
 import java.io.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.time.Duration;
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.sql.Connection;
 
 public class Main{
 
@@ -13,9 +17,23 @@ public class Main{
     	
     	//on first run ever
     	
+    	Connection conn = null;
+    	try {
+    		System.out.println("in");
+    		conn = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3307/cinema_last","root","ioannis");
+
+    		if(conn!=null)
+    		{
+    			System.out.println("success");
+    		}
+    		conn.close();
+    		}
+    	catch (Exception e){
+    		System.out.println("nope");
+    	}
+    
     	
     	//deserialize
-    	
     	 try {
              FileInputStream fileIn = new FileInputStream("cinepolis.txt");
              ObjectInputStream in = new ObjectInputStream(fileIn);
