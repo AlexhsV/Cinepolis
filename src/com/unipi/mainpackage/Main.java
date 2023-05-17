@@ -103,7 +103,8 @@ public class Main{
               headAdmin.createCinema("aithousa Asteria", false, 120);
               headAdmin.createCinema("aithousa Ilios", false, 120);
               
-              headContentAdmin.createProvoli(0, Film.getFilms_Array().get(0), Cinema.getCinemas_Array().get(0), "123", LocalTime.parse("15:30"), false);
+              headContentAdmin.createProvoli( Film.getFilms_Array().get(0), Cinema.getCinemas_Array().get(0), "123", LocalTime.parse("15:30"), false);
+              headContentAdmin.createProvoli( Film.getFilms_Array().get(0), Cinema.getCinemas_Array().get(0), "123", LocalTime.parse("18:30"), false);
           } catch (IOException i) {
              i.printStackTrace();
              return;
@@ -121,7 +122,7 @@ public class Main{
     	
     	
     	//mporoume an theloume na ginoun static oi methodoi opote na mhn theloume object gia na tis kaloume
-    	//headContentAdmin.createProvoli(0, Film.getFilms_Array().get(0), Cinema.getCinemas_Array().get(0),"24/06/2023", LocalTime.parse("19:20"), true);
+    	
     	System.out.println(Provoli.getProvoles_Array().size());
     
   	for (Provoli provoli : Provoli.getProvoles_Array()) {

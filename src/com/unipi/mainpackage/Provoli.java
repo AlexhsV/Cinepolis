@@ -6,7 +6,7 @@ import java.time.LocalTime;
 
 
 public class Provoli implements Serializable {
-	private int provoliID;
+	private String provoliID;
 	private Film provoliFilm;
 	private Cinema provoliCinema;
 	private String provoliDay;
@@ -18,9 +18,9 @@ public class Provoli implements Serializable {
 	//array 2d theseis seires to opoio penrei apo to cinema tou 
     //na valoume ston customer dinatotia na dei an oi theseis pou dialexe yparxoun h oxi (provoliAvailable)
 	
-	public Provoli(int provoliID, Film provoliFilm,Cinema provoliCinema, String provoliDay, LocalTime provoliStartTime, boolean provoliIsAvailable) {
+	public Provoli(Film provoliFilm,Cinema provoliCinema, String provoliDay, LocalTime provoliStartTime, boolean provoliIsAvailable) {
 	
-		this.provoliID = provoliID;
+		this.provoliID = provoliFilm.getFilmTitle()+"_"+provoliCinema.getCinemaID()+"_"+provoliStartTime.toString();
 		this.provoliFilm = provoliFilm;
 		this.provoliCinema = provoliCinema;
 		this.provoliDay = provoliDay;
@@ -33,11 +33,11 @@ public class Provoli implements Serializable {
 		//to provoiliISAVAILABKLE einai kalo na uaprxei sto database apla se auton pou kleinei tha deixnoume mono tis available provoles
 	}
 
-	public int getProvoliID() {
+	public String getProvoliID() {
 		return provoliID;
 	}
 
-	public void setProvoliID(int provoliID) {
+	public void setProvoliID(String provoliID) {
 		this.provoliID = provoliID;
 	}
 

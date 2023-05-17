@@ -2,6 +2,7 @@ package com.unipi.mainpackage;
 
 
 public final class Customer extends User {
+	
 	String dateOfBirth; // in order to access an adult film
 
 	public Customer(String name, String username, String password, String dateOfBirth) {
@@ -22,7 +23,7 @@ public final class Customer extends User {
 		String availableFilms = "films123...";
 		return availableFilms;
 	}
-	public void makeReservation(int provoliID, int numberOfSeats) {
+	public void makeReservation(String provoliID, int numberOfSeats) {
 		System.out.println("choose date, time");
 		for (Provoli provoli : Provoli.getProvoles_Array()) {
     	    if(provoli.getProvoliID() == provoliID && provoli.getProvoliIsAvailable()) {

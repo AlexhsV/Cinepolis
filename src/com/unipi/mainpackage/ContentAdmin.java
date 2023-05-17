@@ -39,8 +39,8 @@ public final class ContentAdmin extends User {
 		return -1;
     }  
     
-    public void createProvoli(int provoliID, Film provoliFilm, Cinema provoliCinema, String provoliDay, LocalTime provoliStartTime, boolean filmIsAvailable) {
-		Provoli.getProvoles_Array().add( new Provoli(provoliID, provoliFilm, provoliCinema, provoliDay , provoliStartTime, filmIsAvailable));
+    public void createProvoli( Film provoliFilm, Cinema provoliCinema, String provoliDay, LocalTime provoliStartTime, boolean filmIsAvailable) {
+		Provoli.getProvoles_Array().add( new Provoli( provoliFilm, provoliCinema, provoliDay , provoliStartTime, filmIsAvailable));
 		
 	}
 
