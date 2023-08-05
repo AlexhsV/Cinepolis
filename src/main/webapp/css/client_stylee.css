@@ -1,0 +1,245 @@
+@charset "ISO-8859-1";
+
+@font-face {
+font-family: "Kanit-SemiBold";
+src: url("Kanit-SemiBold.ttf");
+
+}
+
+*{
+	 margin:0 ;
+	
+}
+
+
+
+body{
+background-image : url("../assets/images/background.jpg");
+background-repeat: no-repeat;
+  background-size: cover;
+  font-family:Kanit-SemiBold;
+    background-attachment: fixed;
+
+}
+
+
+.wrapper{
+	
+	display:flex;
+	flex-direction:column;
+	margin:0 auto;
+	opacity:0;
+}
+
+ @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  #wrapper {
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-duration: 2s;
+    animation-fill-mode: backwards;
+  }
+
+.data-holder{
+	height: 100%;
+  
+}
+
+.user-buttons{
+	background-color:rgb(0, 0, 0);
+	height:100px;
+	display:flex;
+	flex-direction:row;
+	justify-content:space-evenly;
+	align-items:center;
+	border-bottom:2px black solid;
+}
+
+.movie-container{
+	
+	display:flex;
+	justify-content:center;
+	margin:50px;
+	align-items:center;
+	flex-wrap:wrap;
+	
+	
+}
+
+
+
+.movie:hover {
+	transition: all ease 0.5s;
+	width:800px;
+	height:400px;
+	background:white;
+	
+		
+	
+}
+.movie:hover .information{
+	transition: opacity 2s;
+	opacity: 1;
+	
+}
+
+
+
+
+.movie{
+	transition: all 1s;
+	width: 330px;
+	height:400px;
+	color:white;
+	background:black;
+	margin:0 20px 40px 20px;
+	border-radius:20px;
+	
+	
+	
+}
+
+
+
+.columns{
+	display:flex;
+	
+	
+}
+
+.poster{
+	
+	border:solid white 2px;
+	height:350px;
+	display:block;
+	margin:25px 0 0 25px;
+	
+	
+}
+
+.information{
+	transition: opacity 200ms;
+	width:300px;
+	opacity: 0;
+	margin: 25px 0 0 30px;
+	color:black;
+}
+
+.para{
+	width:400px;
+	height:193px;
+	overflow: auto;
+	 scrollbar-width: thin;
+  
+}
+
+.book{
+	margin:15% auto 0 120%;
+    color: black;
+	background:white;
+	height:50px;
+	border: none;
+	cursor: pointer;
+	outline:none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    outline:white 1px black;
+}
+
+.book:hover {
+    transition:background-color 1s;
+    
+    color: black;
+  }
+
+.title{
+	height:70px;
+	overflow:hidden;
+}
+
+.user-nav{
+	
+	
+	transition:all 1s;
+	background:white;
+	width:50px;
+	height:50px;
+	border-radius:0px 50px 50px 0px; 
+}
+
+.user-nav:hover{
+	
+	
+	transition:all 1s;	
+	width:150px;
+	height:100px;
+    border-radius:0px 30px 30px 0px; 
+
+}
+
+.user-nav:hover .log-out{
+ transition:all 0.5s;
+ opacity:1;
+}
+
+.log-out{
+	transition:all 0.5s;
+	height:30px;
+	width:30px;
+	margin-top:5px;
+	margin-left:10px;
+	opacity:0;
+	
+}
+
+
+.tickets{
+	
+	display:flex;
+	justify-content:center;
+	flex-wrap:wrap;
+	overflow:scroll;
+	color:white;
+	  overflow-y: hidden; /* Hide vertical scrollbar */
+  overflow-x: hidden;
+  
+}
+
+.ticket{
+	
+	height:15vh;
+	width:40vh;
+	background-color:white;
+	margin:2vh;
+	background-image:url("../assets/icons/ticketb.png");
+	background-repeat: no-repeat;
+    background-size: cover;
+    display:flex;
+	
+}
+
+
+.right{
+	display:flex;	
+	flex-direction: column;
+	width:43%;
+	height:100%;
+	align-items: center;
+	
+}
+
+.left{
+	
+	width:115%;
+	height:100%;
+	margin-top:2vh;
+	margin-left:12vh;
+}
+
