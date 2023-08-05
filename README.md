@@ -5,9 +5,9 @@ A 3-tier Java web application that was developed as a university assignment for 
 
 ![final_diagram](https://github.com/AlexhsV/Cinepolis/assets/98179885/16dc7a88-893a-48dd-8f70-6afb177bf6a9)
 
-![image](https://github.com/AlexhsV/Cinepolis/assets/98179885/289f944b-99da-41bf-b058-a66d621b4f51)
-
 ![image](https://github.com/AlexhsV/Cinepolis/assets/98179885/4ddae1ea-3c7d-40a7-b23a-9788168ed38f)
+
+![image](https://github.com/AlexhsV/Cinepolis/assets/98179885/289f944b-99da-41bf-b058-a66d621b4f51)
 
 ![image](https://github.com/AlexhsV/Cinepolis/assets/98179885/4278a493-b4d3-4f8c-a0b6-e29b3df2376f)
 
