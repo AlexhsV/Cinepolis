@@ -1,6 +1,6 @@
 # Cinepolis
 
-A Java web application that was developed as a university assignment for the subject of Software Technologies. The app features a custom authentication system with roles including admins, content-admins, and users. Admins can create a content-admin profile and create a cinema room. Content-admins can create a movie entity and schedule a projection for the movie in one of the cinema's rooms that the admins have created. Users can choose the movie of their desire and a projection on the time schedule for the movie in order to book their ticket. This software was developed in phases based on RUP with detailed UML diagrams.
+A 3-tier Java web application that was developed as a university assignment for the subject of Software Technologies. The app features a custom authentication system with roles including admins, content-admins, and users. Admins can create a content-admin profile and create a cinema room. Content-admins can create a movie entity and schedule a projection for the movie in one of the cinema's rooms that the admins have created. Users can choose the movie of their desire and a projection on the time schedule for the movie in order to book their ticket. This software was developed in phases based on RUP with detailed UML diagrams.
 
 
 ![final_diagram](https://github.com/AlexhsV/Cinepolis/assets/98179885/16dc7a88-893a-48dd-8f70-6afb177bf6a9)
